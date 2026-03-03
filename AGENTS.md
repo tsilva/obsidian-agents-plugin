@@ -2,7 +2,7 @@
 
 This file provides guidance to Claude Code when working with this repository.
 
-## Project: my-project
+## Project: obsidian-agents
 
 *Add project-specific instructions here.*
 
