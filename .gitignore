@@ -46,3 +46,7 @@ build/
 logs/
 *.log
 # >>> END MANAGED <<<
+
+# Obsidian plugin
+main.js
+data.json

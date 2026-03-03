@@ -1,0 +1,9 @@
+{
+  "id": "obsidian-agents",
+  "name": "Obsidian Agents",
+  "version": "0.1.0",
+  "minAppVersion": "1.0.0",
+  "description": "Launch Claude Code from your vault — right-click any file or folder to open a terminal with context.",
+  "author": "tsilva",
+  "isDesktopOnly": true
+}
