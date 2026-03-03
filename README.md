@@ -27,7 +27,23 @@
 
 ## Quick Start
 
-### Install from source
+### Automated Install (Recommended)
+
+1. Clone and install:
+   ```bash
+   git clone https://github.com/tsilva/obsidian-agents.git
+   cd obsidian-agents
+   npm install
+   bash install.sh
+   ```
+
+2. Enable the plugin in Obsidian: **Settings → Community Plugins → Obsidian Agents**
+
+3. Right-click any file or folder in the file explorer → **Open with Claude Code**
+
+### Manual Install
+
+If the automated installer doesn't detect your vault or you prefer full control:
 
 1. Clone this repo into your vault's plugin directory:
    ```bash

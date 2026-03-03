@@ -24,6 +24,7 @@ npm run dev      # watch mode
 - `src/main.ts` — plugin source (entry point, menu handler, terminal launcher, settings)
 - `manifest.json` — Obsidian plugin manifest
 - `esbuild.config.mjs` — build configuration
+- `install.sh` — automated install script with vault auto-detection
 - `main.js` — build output (gitignored)
 
 ## Testing
