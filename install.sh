@@ -148,7 +148,7 @@ fi
 
 # Create symlink
 PLUGINS_DIR="$SELECTED_VAULT/.obsidian/plugins"
-TARGET_LINK="$PLUGINS_DIR/obsidian-agents"
+TARGET_LINK="$PLUGINS_DIR/agents"
 
 echo ""
 echo "🔗 Installing plugin..."
@@ -192,7 +192,7 @@ echo ""
 echo "🔧 Enabling plugin in Obsidian..."
 
 COMMUNITY_PLUGINS_FILE="$SELECTED_VAULT/.obsidian/community-plugins.json"
-PLUGIN_ID="obsidian-agents"
+PLUGIN_ID="agents"
 
 if [[ -f "$COMMUNITY_PLUGINS_FILE" ]]; then
     if command -v jq &>/dev/null; then
@@ -226,7 +226,7 @@ except Exception as e:
 "
     else
         echo "   ⚠️  Could not auto-enable plugin (jq or python3 required)"
-        echo "   Manual step: Add 'obsidian-agents' to $COMMUNITY_PLUGINS_FILE"
+        echo "   Manual step: Add 'agents' to $COMMUNITY_PLUGINS_FILE"
     fi
 else
     # Create the file if it doesn't exist
@@ -239,8 +239,8 @@ echo "🎉 Installation complete!"
 echo ""
 echo "Next steps:"
 echo "   1. Reload Obsidian (CMD+Shift+P → 'Reload app without saving')"
-echo "   2. Check Settings → Community Plugins — 'Obsidian Agents' should appear enabled"
-echo "   3. Right-click any file or folder → 'Open with Claude Code'"
+echo "   2. Check Settings → Community Plugins — 'Agents' should appear enabled"
+echo "   3. Right-click any file or folder → 'Open with AI Agent'"
 echo ""
 echo "⚠️  First-time setup: Grant terminal permissions in System Settings → Privacy & Security → Automation → Obsidian"
 echo ""

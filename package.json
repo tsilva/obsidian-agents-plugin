@@ -1,11 +1,12 @@
 {
   "name": "obsidian-agents",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Launch Claude Code from your Obsidian vault",
   "main": "main.js",
   "scripts": {
     "dev": "node esbuild.config.mjs",
-    "build": "node esbuild.config.mjs production",
+    "build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production",
+    "version": "node version-bump.mjs && git add manifest.json versions.json",
     "install-plugin": "bash install.sh"
   },
   "keywords": ["obsidian", "claude", "terminal"],

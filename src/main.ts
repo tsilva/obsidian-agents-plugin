@@ -15,6 +15,11 @@ export default class ObsidianAgentsPlugin extends Plugin {
   settings: ObsidianAgentsSettings = DEFAULT_SETTINGS;
 
   async onload() {
+    if (process.platform !== "darwin") {
+      new Notice("Agents plugin requires macOS.");
+      return;
+    }
+
     await this.loadSettings();
 
     this.registerEvent(

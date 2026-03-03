@@ -1,7 +1,7 @@
 {
-  "id": "obsidian-agents",
-  "name": "Obsidian Agents",
-  "version": "0.1.0",
+  "id": "agents",
+  "name": "Agents",
+  "version": "1.0.0",
   "minAppVersion": "1.0.0",
   "description": "Launch AI agents from your vault — right-click any file or folder to open a terminal with context. Supports Claude, Codex, and other AI CLI tools.",
   "author": "tsilva",
