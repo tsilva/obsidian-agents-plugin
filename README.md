@@ -1,12 +1,13 @@
 <div align="center">
+  <img src="logo.png" alt="obsidian-agents" width="512"/>
 
-# obsidian-agents
+  # obsidian-agents
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Obsidian](https://img.shields.io/badge/Obsidian-plugin-7c3aed.svg)](https://obsidian.md)
-[![Desktop Only](https://img.shields.io/badge/platform-desktop-blue.svg)]()
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+  [![Obsidian](https://img.shields.io/badge/Obsidian-plugin-7c3aed.svg)](https://obsidian.md)
+  [![Desktop Only](https://img.shields.io/badge/platform-desktop-blue.svg)]()
 
-🚀 Launch AI agents from your Obsidian vault — right-click any file or folder to open a terminal with context 🤖
+  🚀 Launch AI agents from your Obsidian vault — right-click any file or folder to open a terminal with context 🤖
 
 </div>
 
@@ -14,16 +15,16 @@
 
 **The Pain:** Switching between Obsidian and the terminal to work with AI agents breaks your flow. You have to navigate to the right directory, remember file paths, and manually set up context.
 
-**The Solution:** obsidian-agents adds right-click context menu items directly in Obsidian. Click any file or folder to instantly launch Claude Code in your terminal, already pointed at the right path.
+**The Solution:** obsidian-agents adds right-click context menu items directly in Obsidian. Click any file or folder to instantly launch your AI agent in a terminal, already pointed at the right path.
 
 **The Result:** Zero context-switching — go from reading notes to AI-assisted coding in one click.
 
 ## Features
 
 - ⚡ **One-click launch** — right-click any file or folder to open your configured AI agent
-- 📁 **Smart context** — files open Claude with the file path pre-loaded; folders open Claude in that directory
+- 📁 **Smart context** — files open your agent with the file path pre-loaded; folders open the agent in that directory
 - 🖥️ **Terminal choice** — supports Terminal.app and iTerm2
-- ⚙️ **Configurable** — customize the Claude command path and terminal app in settings
+- ⚙️ **Configurable** — customize the agent command and terminal app in settings
 
 ## Quick Start
 
@@ -73,7 +74,7 @@ The first time you use the plugin, macOS will block it with error **-1743** (per
 | Setting | Default | Description |
 |---------|---------|-------------|
 | Terminal App | Terminal.app | Choose between Terminal.app and iTerm2 |
-| Claude Command | `claude` | Path to the Claude CLI executable |
+| Agent Command | `claude` | Command to launch the AI agent (e.g., `claude`, `codex`) |
 
 ## How It Works
 

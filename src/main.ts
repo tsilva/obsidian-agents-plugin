@@ -51,7 +51,7 @@ export default class ObsidianAgentsPlugin extends Plugin {
       const parentPath = file.parent ? file.parent.path : "";
       cwd = parentPath ? `${basePath}/${parentPath}` : basePath;
       const relativePath = file.path;
-      args = ` ${JSON.stringify(`Regarding ${relativePath}: `)}`;
+      args = ` ${JSON.stringify(`We are going to work on ${relativePath}. Please prompt me for the next instruction.`)}`;
     } else if (file instanceof TFolder) {
       // For folders: CWD is the folder itself
       cwd = file.path === "/" ? basePath : `${basePath}/${file.path}`;
