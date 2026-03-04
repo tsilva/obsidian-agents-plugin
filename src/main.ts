@@ -26,7 +26,7 @@ export default class ObsidianAgentsPlugin extends Plugin {
       this.app.workspace.on("file-menu", (menu: Menu, file: TAbstractFile) => {
         menu.addItem((item) => {
           item
-            .setTitle("Open with AI agent")
+            .setTitle("Open with agent")
             .setIcon("terminal")
             .onClick(() => this.launchAgent(file));
         });
@@ -127,11 +127,11 @@ class ObsidianAgentsSettingTab extends PluginSettingTab {
 
     new Setting(containerEl)
       .setName("Terminal application")
-      .setDesc("Which terminal to open the AI agent in")
+      .setDesc("Which terminal to open the agent in")
       .addDropdown((dropdown) =>
         dropdown
           .addOption("terminal", "Terminal.app")
-          .addOption("iterm2", "iTerm2")
+          .addOption("iterm2", "iTerm 2")
           .setValue(this.plugin.settings.terminalApp)
           .onChange(async (value) => {
             this.plugin.settings.terminalApp = value as "terminal" | "iterm2";
@@ -141,10 +141,10 @@ class ObsidianAgentsSettingTab extends PluginSettingTab {
 
     new Setting(containerEl)
       .setName("Agent command")
-      .setDesc("Command to launch the AI agent (e.g., claude, codex)")
+      .setDesc("Command to launch the agent (e.g., claude, codex)")
       .addText((text) =>
         text
-          .setPlaceholder("Claude")
+          .setPlaceholder("claude")
           .setValue(this.plugin.settings.agentCommand)
           .onChange(async (value) => {
             this.plugin.settings.agentCommand = value || "claude";
