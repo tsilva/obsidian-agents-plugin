@@ -126,16 +126,13 @@ class ObsidianAgentsSettingTab extends PluginSettingTab {
     containerEl.empty();
 
     new Setting(containerEl)
-      .setName("Terminal application")
-      .setDesc("Which terminal to open the agent in")
-      .addDropdown((dropdown) =>
-        dropdown
-          .addOption("terminal", "Terminal.app")
-          // eslint-disable-next-line obsidianmd/ui/sentence-case
-          .addOption("iterm2", "iTerm 2")
-          .setValue(this.plugin.settings.terminalApp)
+      .setName("Use iTerm")
+      .setDesc("Open agents in iTerm instead of the default terminal")
+      .addToggle((toggle) =>
+        toggle
+          .setValue(this.plugin.settings.terminalApp === "iterm2")
           .onChange(async (value) => {
-            this.plugin.settings.terminalApp = value as "terminal" | "iterm2";
+            this.plugin.settings.terminalApp = value ? "iterm2" : "terminal";
             await this.plugin.saveSettings();
           })
       );
