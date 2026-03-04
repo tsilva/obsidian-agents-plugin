@@ -9,14 +9,21 @@
     "version": "node version-bump.mjs && git add manifest.json versions.json",
     "install-plugin": "bash install.sh"
   },
-  "keywords": ["obsidian", "claude", "terminal"],
+  "keywords": [
+    "obsidian",
+    "claude",
+    "terminal"
+  ],
   "author": "tsilva",
   "license": "MIT",
   "devDependencies": {
+    "@eslint/eslintrc": "^3.3.4",
     "@types/node": "^22.0.0",
     "esbuild": "^0.25.0",
+    "eslint-plugin-obsidianmd": "^0.1.9",
     "obsidian": "latest",
     "tslib": "^2.7.0",
-    "typescript": "^5.6.0"
+    "typescript": "^5.6.0",
+    "typescript-eslint": "^8.56.1"
   }
 }

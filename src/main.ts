@@ -26,7 +26,7 @@ export default class ObsidianAgentsPlugin extends Plugin {
       this.app.workspace.on("file-menu", (menu: Menu, file: TAbstractFile) => {
         menu.addItem((item) => {
           item
-            .setTitle("Open with AI Agent")
+            .setTitle("Open with AI agent")
             .setIcon("terminal")
             .onClick(() => this.launchAgent(file));
         });
@@ -37,7 +37,7 @@ export default class ObsidianAgentsPlugin extends Plugin {
   }
 
   private getVaultBasePath(): string | null {
-    const adapter = this.app.vault.adapter as any;
+    const adapter = this.app.vault.adapter as unknown as { basePath: string };
     return adapter.basePath ?? null;
   }
 
@@ -144,7 +144,7 @@ class ObsidianAgentsSettingTab extends PluginSettingTab {
       .setDesc("Command to launch the AI agent (e.g., claude, codex)")
       .addText((text) =>
         text
-          .setPlaceholder("claude")
+          .setPlaceholder("Claude")
           .setValue(this.plugin.settings.agentCommand)
           .onChange(async (value) => {
             this.plugin.settings.agentCommand = value || "claude";
