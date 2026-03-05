@@ -126,8 +126,8 @@ class ObsidianAgentsSettingTab extends PluginSettingTab {
     containerEl.empty();
 
     new Setting(containerEl)
-      .setName("Use iTerm")
-      .setDesc("Open agents in iTerm instead of the default terminal")
+      .setName("Use alternative terminal")
+      .setDesc("Open agents in a separate terminal app instead of the default one")
       .addToggle((toggle) =>
         toggle
           .setValue(this.plugin.settings.terminalApp === "iterm2")

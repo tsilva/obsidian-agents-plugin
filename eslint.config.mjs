@@ -10,7 +10,6 @@ export default [
     },
     rules: {
       ...obsidianmd.configs.recommended,
-      "obsidianmd/ui/sentence-case": ["error", { brands: ["iTerm2"] }],
       // Disable rules that require type-aware linting
       "obsidianmd/no-plugin-as-component": "off",
       "obsidianmd/no-tfile-tfolder-cast": "off",
