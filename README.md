@@ -1,3 +1,10 @@
+<!-- archive-repo:deprecation-notice:start -->
+> [!WARNING]
+> **Deprecated**
+>
+> This project is obsolete and archived. Improved agent capabilities and tooling now let me point Codex or another agent directly at an Obsidian folder and make changes there.
+<!-- archive-repo:deprecation-notice:end -->
+
 <div align="center">
   <img src="https://raw.githubusercontent.com/tsilva/obsidian-agents-plugin/main/logo.png" alt="Agents" width="180" />
 
