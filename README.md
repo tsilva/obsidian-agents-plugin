@@ -32,6 +32,9 @@ Reload Obsidian, then right-click a file or folder in the file explorer and choo
 pnpm install             # install dependencies
 pnpm run dev             # watch-build main.js during development
 pnpm run build           # type-check and build the production plugin
+pnpm run lint            # lint plugin source
+pnpm run test            # check dependency security and allowed package sources
+pnpm audit --audit-level high # check for high-severity dependency advisories
 pnpm run install-plugin  # build if needed, symlink into a vault, and enable the plugin
 pnpm run version         # sync package version into manifest.json and versions.json
 ```

@@ -5,6 +5,19 @@ import test from "node:test";
 
 const root = process.cwd();
 
+function assertRegistryLockfile(lockfile) {
+  // Deprecation notices can link to documentation; they are not package sources.
+  const sources = lockfile.replace(/^    deprecated:.*$/gm, "");
+  assert.doesNotMatch(sources, /\b(?:git\+|github:|https?:|file:|link:|workspace:|tarball:)/i);
+}
+
+test("lockfile source checks allow documentation links but reject exotic resolutions", () => {
+  assertRegistryLockfile("    deprecated: See https://eslint.org/version-support\n");
+  for (const source of ["https://example.com/package.tgz", "git+https://example.com/repo", "github:owner/repo", "file:../package", "link:../package", "workspace:*", "tarball: package.tgz"]) {
+    assert.throws(() => assertRegistryLockfile(`    resolution: {${source}}\n`));
+  }
+});
+
 function compareVersions(left, right) {
   const leftParts = left.split(/[.-]/).slice(0, 3).map(Number);
   const rightParts = right.split(/[.-]/).slice(0, 3).map(Number);
@@ -59,7 +72,7 @@ test("installed vulnerable dependency families are patched", () => {
   }
 
   for (const installed of versions.get("fast-uri") ?? []) {
-    assert.ok(compareVersions(installed, "3.1.5") >= 0, `fast-uri@${installed} is vulnerable`);
+    assert.ok(compareVersions(installed, "3.1.8") >= 0, `fast-uri@${installed} is vulnerable`);
   }
   for (const installed of versions.get("js-yaml") ?? []) {
     assert.ok(compareVersions(installed, "4.3.1") >= 0, `js-yaml@${installed} is vulnerable`);
@@ -70,9 +83,9 @@ test("installed vulnerable dependency families are patched", () => {
   for (const installed of versions.get("brace-expansion") ?? []) {
     const major = Number(installed.split(".")[0]);
     const floor = new Map([
-      [1, "1.1.16"],
-      [2, "2.1.2"],
-      [5, "5.0.7"],
+      [1, "1.1.21"],
+      [2, "2.1.7"],
+      [5, "5.0.12"],
     ]).get(major);
     if (floor) {
       assert.ok(compareVersions(installed, floor) >= 0, `brace-expansion@${installed} is vulnerable`);
@@ -89,7 +102,7 @@ test("manifests and lockfile reject exotic dependency sources", () => {
   }
 
   const lockfile = readFileSync(`${root}/pnpm-lock.yaml`, "utf8");
-  assert.doesNotMatch(lockfile, /\b(?:git\+|github:|https?:|file:|link:|workspace:|tarball:)/i);
+  assertRegistryLockfile(lockfile);
 
   const workspace = readFileSync(`${root}/pnpm-workspace.yaml`, "utf8");
   assert.match(workspace, /^minimumReleaseAge: 10080$/m);
