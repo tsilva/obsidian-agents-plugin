@@ -1,17 +1,17 @@
+<p align="center">
+  <img src="https://raw.githubusercontent.com/tsilva/obsidian-agents-plugin/main/logo.png" alt="Agents" width="180" />
+  <br />
+  <!-- repo-tagline:start -->
+  <strong>🚀 Launch AI agents from Obsidian with file and folder context 🤖</strong>
+  <!-- repo-tagline:end -->
+</p>
+
 <!-- archive-repo:deprecation-notice:start -->
 > [!WARNING]
 > **Deprecated**
 >
 > This project is obsolete and archived. Improved agent capabilities and tooling now let me point Codex or another agent directly at an Obsidian folder and make changes there.
 <!-- archive-repo:deprecation-notice:end -->
-
-<div align="center">
-  <img src="https://raw.githubusercontent.com/tsilva/obsidian-agents-plugin/main/logo.png" alt="Agents" width="180" />
-
-  # Agents
-
-  **🚀 Launch AI agents from your vault — right-click any file or folder to open a terminal with context 🤖**
-</div>
 
 Agents is a macOS-only Obsidian plugin that adds an **Open with agent** action to the file explorer context menu. Right-click a note or folder and it opens your configured AI CLI in Terminal.app or iTerm2, already pointed at the right vault location.
 
